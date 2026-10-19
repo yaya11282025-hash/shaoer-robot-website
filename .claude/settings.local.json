@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python --version)",
+      "PowerShell(Start-Process python -ArgumentList \"-m\", \"http.server\", \"8000\" -PassThru -NoNewWindow)",
+      "PowerShell(Start-Sleep -Seconds 2; try { $response = Invoke-WebRequest -Uri \"http://localhost:8000\" -TimeoutSec 5 -UseBasicParsing; if \\($response.StatusCode -eq 200\\) { Write-Output \"服务器运行成功！HTTP 200 OK\" } } catch { Write-Output \"等待服务器启动...\" })",
+      "PowerShell(Start-Process \"http://localhost:8000\")",
+      "PowerShell(winget install *)",
+      "PowerShell(git *)",
+      "PowerShell(git init *)",
+      "PowerShell(git config *)",
+      "PowerShell(git add *)"
+    ]
+  }
+}
